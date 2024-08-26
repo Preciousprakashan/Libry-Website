@@ -1,0 +1,45 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+/* Navbar styles */
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-nav.ml-auto a.nav-link {
+    color: #000;
+}
+
+.navbar-nav.ml-auto a.nav-link:hover {
+    color: #ff4b2b;
+}
+
+#mainNav {
+    transition: background-color 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+}
+
+.fixed-top.scrolled {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    background-color: #ff4b2b;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-container a {
+    color: #fff;
+    font-size: 24px;
+}

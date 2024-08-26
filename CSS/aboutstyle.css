@@ -1,0 +1,323 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-nav.ml-auto a.nav-link {
+    color: #000;
+}
+
+.navbar-nav.ml-auto a.nav-link:hover {
+    color: #ff4b2b;
+}
+
+#mainNav {
+    transition: background-color 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+}
+
+.fixed-top.scrolled {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Video Background Styles */
+.video-bg {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Floating Search Bar Styles */
+.search-bar {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    padding-top: 100px; /* Adjust based on navbar height */ /* Space at the bottom */
+}
+
+/* Footer */
+footer {
+  background-color: #ff4b2b;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-container a {
+  color: #fff;
+  font-size: 24px;
+}
+
+.social-container a {
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 95%;
+    }
+
+    .navbar-brand {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1em;
+    }
+}
+
+
+
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust based on your layout needs */
+    
+  }
+  
+  .search-container {
+    
+    position: relative;
+    width: 600px; /* Search bar width */
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 15px 60px 15px 20px; /* Adjust padding to accommodate button */
+    border: 3px solid #fff;
+    border-radius: 50px;
+    background: transparent;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+  }
+  .search-input::placeholder {
+    color: #fff; /* Placeholder color */
+    font-family:  'Montserrat', sans-serif; /* Ensure this matches your input font */
+    text-transform: uppercase; /* Optional */
+  }
+  .search-input:focus {
+    color: #ffffff; /* Color of text when typing */
+    background-color: rgba(86, 86, 86, 0.8); /* Background color when typing */ 
+  }
+  
+  
+  .search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60px; /* Button width */
+    border: none;
+    border-radius: 50px;
+    background: #fff;
+    color: #fc913a;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .search-btn i {
+    font-size: 20px; /* Adjust icon size if needed */
+  }
+  
+
+
+
+
+
+
+  :root{
+    --background-dark: #fff;
+    --text-light: rgba(204, 0, 0, 0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+  }
+  
+  
+  
+  
+  
+
+
+  .hero-section {
+    background-image: url('/Library_webpage/images/10.jpg');
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center the items horizontally */
+    /* background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 20%, rgba(176, 176, 176, 0.6) 100%); */
+    min-height: 100%;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    text-align: center; /* Center the heading text */
+    color: #ffffff; /* Adjust to your preferred color */
+}
+  
+  .card1-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-l);
+    grid-row-gap: var(--spacing-l);
+    max-width: var(--width-container);
+    width: 100%;
+  }
+  
+  @media(min-width: 540px){
+    .card1-grid{
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+  
+  @media(min-width: 960px){
+    .card1-grid{
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+  
+  .card1{
+    list-style: none;
+    position: relative;
+  }
+  
+  .card1:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+  
+  .card1__background{
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: 
+      filter 200ms linear,
+      transform 200ms linear;
+  }
+  
+  .card1:hover .card__background{
+    transform: scale(1.05) translateZ(0);
+  }
+  
+  .card1-grid:hover > .card1:not(:hover) .card1__background{
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+  }
+  
+  .card1__content{
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card1__category{
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-s);
+    text-transform: uppercase;
+  }
+  
+  .card1__heading{
+    color: var(--text-lighter);
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+  }
+
+
+
+  /* Profile Card Styles */
+.profile-card {
+    border-radius: var(--spacing-l);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-xl);
+}
+
+.profile-card .card-body {
+    padding: var(--spacing-l);
+}
+
+.profile-card .card-title {
+    font-size: 1.2rem;
+    color: #333; /* Adjust to your preferred color */
+}
+
+.profile-card .card-text {
+    font-size: 1rem;
+    color: #666; /* Adjust to your preferred color */
+}
+
+.profile-card .btn-primary {
+    background-color: #007bff;
+    border: none;
+}

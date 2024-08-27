@@ -188,7 +188,7 @@ footer {
 
 
   .hero-section {
-    background-image: url('/Library_webpage/images/10.jpg');
+    background-image: url('images/10.jpg');
     display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center the items horizontally */

@@ -66,7 +66,6 @@ body {
 
 .content-wrapper {
     padding-top: 100px; /* Adjust based on navbar height */
-    padding-bottom: 50px; /* Space at the bottom */
 }
 
 /* Footer */
@@ -170,6 +169,7 @@ footer {
     --spacing-s: 8px;
     --spacing-m: 16px;
     --spacing-l: 24px;
+    --spacing-lc: 10px;
     --spacing-xl: 32px;
     --spacing-xxl: 64px;
     --width-container: 1200px;
@@ -185,7 +185,7 @@ footer {
     display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center the items horizontally */
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 20%, rgba(176, 176, 176, 0.6) 100%);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 60%, rgb(183, 183, 183) 100%);
     min-height: 100%;
     justify-content: center;
     padding: var(--spacing-xxl) var(--spacing-l);
@@ -237,9 +237,9 @@ footer {
   .card1__background{
     background-size: cover;
     background-position: center;
-    border-radius: var(--spacing-l);
+    border-radius: var(--spacing-lc);
     bottom: 0;
-    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    filter: brightness(0.8) saturate(1.2) contrast(0.90);
     left: 0;
     position: absolute;
     right: 0;

@@ -7,11 +7,14 @@
     <title>Libry - Home</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <link href="general.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
+
+    <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#">Libry</a>
@@ -23,7 +26,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                 </ul>
@@ -31,13 +34,75 @@
         </div>
     </header>
 
+ <!-- Fixed Background Video Section -->
+<div class="video-bg">
+    <video autoplay muted loop id="bg-video">
+        <source src="video/1.mp4" type="video/mp4">
+    </video>
+    <div class="search-wrapper">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="What are you looking for?">
+          <button class="search-btn" action="search-input"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+      
+</div>
+
+
+
     <!-- Main Content Wrapper -->
     <div class="content-wrapper">
-        <!-- Your content here -->
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+        
+
+<section class="hero-section">
+    <h2 class="hero-heading">Book Categories</h2>
+  <div class="card1-grid">
+    <a class="card1" href="books.html#Romance">
+      <div class="card1__background" style="background-image: url(https://thedunemarket.com/cdn/shop/products/CopyofBookCovers-2022-10-16T161245.018.png?v=1665951172);"></div>
+      <div class="card1__content">
+        <p class="card1__category">Category</p>
+        <h3 class="card1__heading">Romance</h3>
+      </div>
+    </a>
+    <a class="card1" href="books.html#General_Fiction">
+      <div class="card1__background" style="background-image: url(https://thedunemarket.com/cdn/shop/files/BookCovers-2024-07-23T134816.882.png?v=1721756911)"></div>
+      <div class="card1__content">
+        <p class="card1__category">Category</p>
+        <h3 class="card1__heading">General Fiction</h3>
+      </div>
+    </a>
+    <a class="card1" href="books.html#ThrillerM">
+      <div class="card1__background" style="background-image: url(https://thedunemarket.com/cdn/shop/products/CopyofCopyofBookCovers-2022-09-29T104511.785.png?v=1664462722)"></div>
+      <div class="card1__content">
+        <p class="card1__category">Category</p>
+        <h3 class="card1__heading">Thriller & Mystery</h3>
+      </div>
+    </li>
+    <a class="card1" href="books.html#Fantasy">
+      <div class="card1__background" style="background-image: url(https://thedunemarket.com/cdn/shop/files/BookCovers-2024-08-05T165613.112.png?v=1722891418)"></div>
+      <div class="card1__content">
+        <p class="card1__category">Category</p>
+        <h3 class="card1__heading">Fantasy</h3>
+      </div>
+    </a>
+  <div>
+</section>
+        
+
+
+
+
+
+
+        
+        <!-- Additional content can be added here -->
     </div>
 
     <!-- Footer -->
-    <footer class="text-white mt-5 p-4 text-center">
+    <footer class=" text-white mt-5 p-4 text-center">
         <p>&copy; 2024 Libry. All rights reserved.</p>
         <div class="social-container">
             <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
@@ -50,6 +115,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
+
 
 </html>

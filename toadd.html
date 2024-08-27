@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Popup Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow-x: hidden;
+        }
+
+        /* Modal Styles */
+        .modal {
+            z-index: 7;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.1);
+            transition: visibility 0s linear 0.25s, opacity 0.25s, transform 0.25s;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.36);
+            color: #000;
+        }
+
+        .close-button:hover {
+            background-color: rgba(255, 255, 255, 0.81);
+        }
+
+        .show-modal {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            transition: visibility 0s linear 0s, opacity 0.25s, transform 0.25s;
+        }
+
+        /* Trigger Button Styles */
+        #submitBtn {
+            position: fixed;
+            top: 2%;
+            right: 2%;
+            z-index: 6;
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #submitBtn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Pop-up Card Styles */
+        .flex {
+            display: flex;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex--movie {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .lg\:w-1\/2 {
+            width: 50%;
+        }
+
+        .max-w-4xl {
+            max-width: 1024px;
+        }
+
+        .rounded {
+            border-radius: 0.5rem;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .m-4 {
+            margin: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .md\:flex-shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .md\:w-56 {
+            width: 14rem;
+        }
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .bg-color-333 {
+            background-color: #333;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .md\:text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .lg\:text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-gray-200 {
+            color: #e5e7eb;
+        }
+
+        .movie--title {
+            margin-bottom: 0.5rem;
+        }
+
+        .movie--year {
+            font-variant-numeric: ordinal;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.07em;
+            font-family: monospace;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .lg\:text-sm {
+            font-size: 0.875rem;
+        }
+
+        .lg\:mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .text-gray-100 {
+            color: #f7fafc;
+        }
+
+        .leading-snug {
+            line-height: 1.375;
+        }
+
+        .truncate-overflow {
+            position: relative;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Trigger Button -->
+    <button class="trigger" id="submitBtn">Submit</button>
+
+    <!-- Modal Structure -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&#215;</span>
+            <!-- Pop-up Card Content -->
+            <div class="flex flex-wrap flex--movie">
+                <div class="w-full lg:w-1/2 max-w-4xl rounded overflow-hidden shadow-lg m-4 flex justify-between">
+                    <div class="md:flex-shrink-0">
+                        <img class="md:w-56" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/nAU74GmpUk7t5iklEp3bufwDq4n.jpg" alt="Movie Image">
+                    </div>
+                    <div class="flex-grow px-8 py-4 bg-color-333">
+                        <h2 class="font-bold text-4xl md:text-2xl lg:text-2xl text-gray-200 movie--title">A Quiet Place</h2>
+                        <p class="movie--year text-xl lg:text-sm">2019</p>
+                        <div class="movie--description leading-snug text-gray-100 truncate-overflow">
+                            A family is forced to live in silence while hiding from creatures that hunt by sound.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Modal Behavior
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.querySelector(".modal");
+            const trigger = document.querySelector("#submitBtn");
+            const closeButton = document.querySelector(".close-button");
+
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+            }
+
+            function windowOnClick(event) {
+                if (event.target === modal) {
+                    toggleModal();
+                }
+            }
+
+            trigger.addEventListener("click", toggleModal);
+            closeButton.addEventListener("click", toggleModal);
+            window.addEventListener("click", windowOnClick);
+        });
+    </script>
+</body>
+
+</html>
